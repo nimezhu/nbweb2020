@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>SVG Export</title>
+    <script src="/lib/d3.v5.min.js"></script>
+    <script src="/lib/jquery.min.js"></script>
+    <script src="../lib/jspdf.min.js"></script>
+    <script src="../lib/svg2pdf.min.js"></script>
+    <script src="../lib/cnb.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        /* Loader */
+
+        .canvas1 {
+            float: left;
+            width: 100%;
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+            overflow-x: auto;
+            background-color: #EEE;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 25px;
+            height: 25px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body style="padding:0px">
+
+    <div id="menubar" class="menu fn-clear" style="height:35px;padding-top:3px">
+ <ul id="myNavRight" style="float:left">
+            <li id="logo">
+                <image src="/static/image/icon.png" style="height:18px;width:18px;margin:4px 8px"></image>
+            </li>
+        </ul>
+
+            <span> File Name:</span>
+            <input style="color:#333" id="filename" type="text" placeholder="newplot"></input>
+            <button class="btn-xs btn-success" id="downloadSvg" title="Download Figure as SVG File"><span class="glyphicon glyphicon-download"></span>SVG</button>
+            <button class="btn-xs btn-success" id="downloadPdf" title="Download Figure as PDF File"><span class="glyphicon glyphicon-download"></span>PDF</button>
+            <button class="btn-xs btn-success" id="downloadPng" title="Download Figure as PNG File"><span class="glyphicon glyphicon-download"></span>PNG</button>
+            <button class="btn-xs btn-default" id="editSvg" title="Edit in SVG"><span class="glyphicon glyphicon-edit"></span>Edit</button>
+           </div>
+    <!--
+    <div id="sidebar" class="sidebar">
+    </div>
+    -->
+    <div class="loader" id="loader" style="display:none">
+    </div>
+    <div id="canvas" class="canvas1">
+        <div id="svgDiv" style="background-color:#FFF;padding:10px;width:100%">
+            <svg id="svg" width="1200" height="700" style="border:1px solid black;" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+        </div>
+    </div>
+    <div id="tmp" style="display:none"></div>
+
+    <script src="lib/main.js"></script>
+    <script>
+        (function(d3)
+        {
+            var d = localStorage.getItem("_hubs_")
+            d = JSON.parse(d)
+
+            var svg = d3.select("svg")
+            cnb.printHubs(svg, d)
+            document.getElementById("editSvg").onclick = (e) => {
+                localStorage.setItem("svgedit-default",d3.select("#svgDiv").node().innerHTML)
+                window.open("/static/others/svgedit/editor/svg-editor.html")
+            }
+        })(d3)
+    </script>
+</body>
+
+</html>

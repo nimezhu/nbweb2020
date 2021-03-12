@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CNB SVG Export</title>
+    <script src="../lib/d3.v5.min.js"></script>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/jspdf.min.js"></script>
+    <script src="../lib/svg2pdf.min.js"></script>
+    <script src="../lib/cnb.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        /* Loader */
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 25px;
+            height: 25px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body style="padding:0px">
+
+    <div id="menubar" class="menu fn-clear" style="height:30px">
+        <ul id="myNavRight" style="float:right">
+            <li id="logo">
+                <image src="/static/image/icon.png" style="height:18px;width:18px;margin:4px 8px"></image>
+            </li>
+        </ul>
+    </div>
+    <div id="sidebar" class="sidebar">
+        <div style="padding:5px">
+            <span> File Name:</span><br>
+            <input style="color:#333" id="filename" type="text" placeholder="newplot"></input>
+            <div style="padding-top:5px">
+                <button class="btn-xs btn-success" id="downloadSvg" title="Download Figure as SVG File"><span class="glyphicon glyphicon-download"></span>SVG</button>
+                <button class="btn-xs btn-success" id="downloadPdf" title="Download Figure as PDF File"><span class="glyphicon glyphicon-download"></span>PDF</button>
+                <button class="btn-xs btn-success" id="downloadPng" title="Download Figure as PNG File"><span class="glyphicon glyphicon-download"></span>PNG</button>
+            </div>
+            <div style="text-align:center;padding-top:5px">
+                <div class="loader" id="loader" style="display:none">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="canvas" class="canvas">
+        <div id="svgDiv" style="background-color:#FFF;padding:10px;width:100%">
+            <svg id="svg" width="1200" height="700" style="border:1px solid black;">
+            </svg>
+        </div>
+    </div>
+    <div id="tmp" style="display:none"></div>
+
+    <script src="lib/main.js"></script>
+    <script>
+        (function(d3)
+        {
+            var d = localStorage.getItem("_hubs_")
+            d = JSON.parse(d)
+
+            var svg = d3.select("svg")
+            cnb.printHubs(svg, d)
+        })(d3)
+    </script>
+</body>
+
+</html>

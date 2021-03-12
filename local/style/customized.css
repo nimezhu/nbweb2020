@@ -1,0 +1,66 @@
+.dragHandle {
+	width: 15px !important;
+	background-color: #e8ded1 !important;
+	border: 2px solid #fff;
+}
+
+.dragHandle:hover {
+	background-color: #abc5b7 !important;
+}
+
+.lm_header {
+	background-color: #8c98a0;
+}
+
+.lm_header .lm_tab {
+	border-radius: 0 5px 0 0;
+	z-index: 1;
+	background-color: #3872d1;
+	color: #d4d4d4;
+	border: 0;
+}
+
+.navbar {
+	background-color: #212121;
+	padding-top: 5px;
+}
+
+.lm_active {
+	background-color: #e1e1e1 !important;
+	color: #777 !important;
+}
+
+#myNavRight {
+	float: right;
+}
+
+.gbctrl {
+	height: auto !important;
+	padding-bottom: 30px;
+}
+
+.menu {
+	background-color: #00283c;
+	color: #fff;
+}
+
+.menu .split {
+	height: 0px;
+}
+
+.btn-xs {
+	padding: 10 30px !important;
+	background-color: #7493a2;
+	color: #fff;
+	border: none;
+	margin: 0 2px;
+}
+
+.input-xs {
+	height: 40px;
+	margin-top: 5px;
+}
+
+.btn .btn-default .btn-xs .glyphicon .glyphicon-play {
+	padding: 0 40px;
+}

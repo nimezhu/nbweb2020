@@ -1,0 +1,80 @@
+09:53:01: Route / -> reads files from ./
+09:53:01: Listening on http://devd.io:8848 (127.0.0.1:8848)
+09:58:35: GET /sw.js
+	<- 200 OK 1.7 kB
+09:58:47: GET /manifest.json
+	<- 200 OK 432 B
+09:59:43: GET /manifest.json
+	<- 304 Not Modified 
+09:59:45: GET /sw.js
+	<- 304 Not Modified 
+10:00:07: GET /manifest.json
+	<- 304 Not Modified 
+10:00:09: GET /sw.js
+	<- 304 Not Modified 
+10:00:40: GET /sw.js
+	<- 304 Not Modified 
+10:00:44: GET /sw.js
+	<- 304 Not Modified 
+10:01:03: GET /sw.js
+	<- 304 Not Modified 
+10:01:04: GET /sw.js
+	<- 304 Not Modified 
+10:02:19: GET /sw.js
+	<- 200 OK 1.6 kB
+10:02:24: GET /sw.js
+	<- 304 Not Modified 
+10:02:42: GET /sw.js
+	<- 304 Not Modified 
+10:03:36: GET /sw.js
+	<- 304 Not Modified 
+10:05:14: GET /sw.js
+	<- 304 Not Modified 
+10:05:36: GET /manifest.json
+	<- 200 OK 432 B
+10:07:53: GET /sw.js
+	<- 304 Not Modified 
+10:08:27: GET /sw.js
+	<- 304 Not Modified 
+10:10:13: GET /sw.js
+	<- 304 Not Modified 
+10:11:07: GET /sw.js
+	<- 304 Not Modified 
+10:21:47: GET /sw.js
+	<- 304 Not Modified 
+10:21:55: GET /manifest.json
+	<- 304 Not Modified 
+10:23:55: GET /sw.js
+	<- 200 OK 1.6 kB
+10:25:00: GET /sw.js
+	<- 304 Not Modified 
+10:29:44: GET /sw.js
+	<- 200 OK 1.6 kB
+10:32:18: GET /sw.js
+	<- 200 OK 1.6 kB
+10:32:37: GET /sw.js
+	<- 304 Not Modified 
+10:32:58: GET /sw.js
+	<- 304 Not Modified 
+10:34:02: GET /sw.js
+	<- 304 Not Modified 
+10:34:19: GET /sw.js
+	<- 304 Not Modified 
+10:36:16: GET /sw.js
+	<- 200 OK 1.6 kB
+10:36:27: GET /sw.js
+	<- 304 Not Modified 
+10:48:41: GET /sw.js
+	<- 200 OK 1.6 kB
+10:48:41: GET /cache-polyfill.js
+	<- 200 OK 2.3 kB
+10:48:49: GET /sw.js
+	<- 304 Not Modified 
+10:49:23: GET /cache-polyfill.js
+	<- 304 Not Modified 
+10:49:24: GET /sw.js
+	<- 304 Not Modified 
+10:51:54: GET /sw.js
+	<- 200 OK 3.9 kB
+10:52:02: GET /sw.js
+	<- 304 Not Modified 

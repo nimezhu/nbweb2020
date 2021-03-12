@@ -1,0 +1,22 @@
+{
+  "short_name": "NBrowser",
+  "name": "Nucleome Browser",
+  "icons": [
+    {
+      "src": "/static/img/icon3/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/img/icon3/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/v1/main.html",
+  "background_color": "#EEE",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#EEE"
+}
+
