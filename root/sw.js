@@ -1,6 +1,6 @@
 importScripts("cache-polyfill.js")
 
-var CACHE_VERSION = 'v0.9.3';
+var CACHE_VERSION = 'v0.9.4';
 var CACHE_FILES = [
     "/manifest.json",
     "/lib/jquery.min.js",
